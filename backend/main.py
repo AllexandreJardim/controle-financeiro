@@ -2,10 +2,11 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from database import get_connection
 from fastapi.middleware.cors import CORSMiddleware
-
+from database import get_connection, criar_tabela 
 
 app = FastAPI()
 
+criar_tabela() 
 
 app.add_middleware(
     CORSMiddleware,
