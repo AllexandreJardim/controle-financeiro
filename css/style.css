@@ -116,3 +116,30 @@ body {
 .btn-salvar:hover {
   background-color: #33334d;
 }
+
+ 
+.tabela-movimentacoes {
+  width: 100%;
+  border-collapse: collapse;
+}
+ 
+.tabela-movimentacoes th {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  font-size: 13px;
+  color: #555;
+}
+ 
+.tabela-movimentacoes td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+ 
+.mensagem-vazio {
+  text-align: center;
+  color: #888;
+  padding: 20px 0;
+}
+ 
