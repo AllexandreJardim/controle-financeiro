@@ -7,93 +7,99 @@
     <title>Controle Financeiro</title>
 </head>
 <body>
-     <header class="header">
-    <h1>Controle Financeiro</h1>
-  </header>
+    <header class="header">
+        <h1>Controle Financeiro</h1>
+    </header>
  
- <main class="container">
+    <main class="container">
 
-      <section class="resumo">
-      <div class="card card-saldo">
-        <span class="card-label">Saldo</span>
-        <span class="card-valor" id="saldo">R$ 0,00</span>
-      </div>
- 
-      <div class="card card-receitas">
-        <span class="card-label">Receitas</span>
-        <span class="card-valor" id="total-receitas">R$ 0,00</span>
-      </div>
- 
-      <div class="card card-despesas">
-        <span class="card-label">Despesas</span>
-        <span class="card-valor" id="total-despesas">R$ 0,00</span>
-      </div>
-    </section>
+        <section class="resumo">
+        <div class="card card-saldo">
+            <span class="card-label">Saldo</span>
+            <span class="card-valor" id="saldo">R$ 0,00</span>
+        </div>
+    
+        <div class="card card-receitas">
+            <span class="card-label">Receitas</span>
+            <span class="card-valor" id="total-receitas">R$ 0,00</span>
+        </div>
+    
+        <div class="card card-despesas">
+            <span class="card-label">Despesas</span>
+            <span class="card-valor" id="total-despesas">R$ 0,00</span>
+        </div>
+        </section>
 
-     <section class="form-section">
-      <h2>Nova movimentação</h2>
- 
-      <form id="form-movimentacao">
-        <div class="form-group">
-          <label for="tipo">Tipo</label>
-          <select id="tipo" name="tipo" required>
-            <option value="">Selecione</option>
-            <option value="receita">Receita</option>
-            <option value="despesa">Despesa</option>
-          </select>
-        </div>
- 
-        <div class="form-group">
-          <label for="descricao">Descrição</label>
-          <input type="text" id="descricao" name="descricao" placeholder="Ex: Salário, Aluguel..." required>
-        </div>
- 
-        <div class="form-group">
-          <label for="valor">Valor</label>
-          <input type="number" id="valor" name="valor" step="0.01" min="0.01" placeholder="0,00" required>
-        </div>
- 
-        <div class="form-group">
-          <label for="categoria">Categoria</label>
-          <select id="categoria" name="categoria" required>
-            <option value="">Selecione</option>
-            <option value="salario">Salário</option>
-            <option value="alimentacao">Alimentação</option>
-            <option value="transporte">Transporte</option>
-            <option value="moradia">Moradia</option>
-            <option value="lazer">Lazer</option>
-            <option value="saude">Saúde</option>
-            <option value="outros">Outros</option>
-          </select>
-        </div>
- 
-        <div class="form-group">
-          <label for="data">Data</label>
-          <input type="date" id="data" name="data" required>
-        </div>
- 
-        <button type="submit" class="btn-salvar">Salvar</button>
-      </form>
-    </section>
+        <section class="form-section">
+        <h2>Nova movimentação</h2>
+    
+        <form id="form-movimentacao">
+            <div class="form-group">
+            <label for="tipo">Tipo</label>
+            <select id="tipo" name="tipo" required>
+                <option value="">Selecione</option>
+                <option value="receita">Receita</option>
+                <option value="despesa">Despesa</option>
+            </select>
+            </div>
+    
+            <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" name="descricao" placeholder="Ex: Salário, Aluguel..." required>
+            </div>
+    
+            <div class="form-group">
+            <label for="valor">Valor</label>
+            <input type="number" id="valor" name="valor" step="0.01" min="0.01" placeholder="0,00" required>
+            </div>
+    
+            <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria" required>
+                <option value="">Selecione</option>
+                <option value="salario">Salário</option>
+                <option value="alimentacao">Alimentação</option>
+                <option value="transporte">Transporte</option>
+                <option value="moradia">Moradia</option>
+                <option value="lazer">Lazer</option>
+                <option value="saude">Saúde</option>
+                <option value="outros">Outros</option>
+            </select>
+            </div>
+    
+            <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required>
+            </div>
+    
+            <button type="submit" class="btn-salvar">Salvar</button>
+        </form>
+        </section>
 
-    <section class="lista-section">
-      <h2>Movimentações</h2>
- 
-      <table class="tabela-movimentacoes">
-        <thead>
-          <tr>
-            <th>Data</th>
-            <th>Descrição</th>
-            <th>Categoria</th>
-            <th>Tipo</th>
-            <th>Valor</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="lista-movimentacoes">
-       
-        </tbody>
-      </table>
- 
-      <p id="mensagem-vazio" class="mensagem-vazio">Nenhuma movimentação cadastrada ainda.</p>
-    </section>
+        <section class="lista-section">
+        <h2>Movimentações</h2>
+    
+        <table class="tabela-movimentacoes">
+            <thead>
+            <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody id="lista-movimentacoes">
+        
+            </tbody>
+        </table>
+    
+        <p id="mensagem-vazio" class="mensagem-vazio">Nenhuma movimentação cadastrada ainda.</p>
+        </section>
+
+    </main>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
