@@ -63,3 +63,20 @@ def criar_movimentacao(movimentacao: Movimentacao):
         "categoria": movimentacao.categoria,
         "data": movimentacao.data
     }
+
+
+@app.delete("/movimentacoes/{id}")
+def excluir_movimentacao(id: int):
+    conexao = get_connection()
+    cursor = conexao.cursor()
+
+    cursor.execute(
+        "DELETE FROM movimentacoes WHERE id = ?",
+        (id,)
+    )
+
+    conexao.commit()
+
+    conexao.close()
+
+    return {"mensagem": "Movimentação excluída com sucesso!"}
