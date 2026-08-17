@@ -41,8 +41,6 @@ function atualizarResumo() {
 }
 
 
- 
-// Cria uma linha <tr> da tabela para uma movimentação
 function criarLinha(mov) {
   const tr = document.createElement('tr');
  
@@ -60,8 +58,7 @@ function criarLinha(mov) {
   return tr;
 }
  
- 
-// Redesenha a tabela inteira a partir do array de movimentações
+
 function renderizarLista() {
   listaMovimentacoes.innerHTML = '';
  
@@ -79,5 +76,40 @@ function renderizarLista() {
   atualizarResumo();
 }
 
+
+form.addEventListener('submit', function (evento) {
+  evento.preventDefault();
+ 
+  const novaMovimentacao = {
+    id: Date.now(), 
+    tipo: document.getElementById('tipo').value,
+    descricao: document.getElementById('descricao').value,
+    valor: parseFloat(document.getElementById('valor').value),
+    categoria: document.getElementById('categoria').value,
+    data: document.getElementById('data').value
+  };
+ 
+  movimentacoes.push(novaMovimentacao);
+  renderizarLista();
+ 
+  form.reset();
+});
+ 
+ 
+listaMovimentacoes.addEventListener('click', function (evento) {
+  if (evento.target.classList.contains('btn-excluir')) {
+    const id = Number(evento.target.dataset.id);
+ 
+    movimentacoes = movimentacoes.filter(function (mov) {
+      return mov.id !== id;
+    });
+ 
+    renderizarLista();
+  }
+});
+ 
+ 
+renderizarLista();
+ 
 
  
